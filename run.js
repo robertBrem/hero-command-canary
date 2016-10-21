@@ -3,7 +3,7 @@
 var kubernetesName = "hero-command-test";
 var FileWriter = Java.type("java.io.FileWriter");
 
-var deploymentPath = containerName + "-deployment.yml";
+var deploymentPath = "hero-command-deployment.yml";
 var fw = new FileWriter(deploymentPath);
 fw.write("apiVersion: extensions/v1beta1\n");
 fw.write("kind: Deployment\n");
