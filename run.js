@@ -1,9 +1,10 @@
 #!/usr/bin/jjs -fv
 
+var baseName = "hero-command";
 var kubernetesName = "hero-command-test";
 var FileWriter = Java.type("java.io.FileWriter");
 
-var deploymentPath = "hero-command-deployment.yml";
+var deploymentPath = baseName + "-deployment.yml";
 var fw = new FileWriter(deploymentPath);
 fw.write("apiVersion: extensions/v1beta1\n");
 fw.write("kind: Deployment\n");
@@ -29,7 +30,7 @@ $EXEC(startHeroCommand);
 print($OUT);
 print($ERR);
 
-var servicePath = containerName + "-service.yml";
+var servicePath = baseName + "-service.yml";
 var fw = new FileWriter(servicePath);
 fw.write("apiVersion: v1\n");
 fw.write("kind: Service\n");
