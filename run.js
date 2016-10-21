@@ -9,7 +9,7 @@ var fw = new FileWriter(deploymentPath);
 fw.write("apiVersion: extensions/v1beta1\n");
 fw.write("kind: Deployment\n");
 fw.write("metadata:\n");
-fw.write("  name: hero-command\n");
+fw.write("  name: hero-command-" + $ENV.VERSION + "\n");
 fw.write("spec:\n");
 fw.write("  replicas: 1\n");
 fw.write("  template:\n");
